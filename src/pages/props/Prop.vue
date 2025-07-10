@@ -1,17 +1,25 @@
 <template>
-    <h1>Hello World! {{ boat }}</h1>
+    <div :class="variant">
+        <h1>BPPM!</h1>
+    </div>
 </template>
 
 <script setup lang="ts">
-    import { ref, onMounted } from 'vue'
 
-    const boat = ref(0)
+    enum Variant {
+        success = 'success',
+        warning = 'warning',
+        error = 'error'
+    }
+    // can be 'success', 'warning' or 'error'
+    defineProps<{
+        variant: {
+            type: Variant,
 
-    onMounted(() => {
-        setInterval(() => {
-            boat.value += 1
-        }, 1000)
-    })
+        }
+    }>()
+
+   
 </script>
 
 <style scoped>
