@@ -1,5 +1,14 @@
 {
   "files": [],
+  "module": "esnext",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "types": ["node", "jest"],
+  },
+  "ts-node": {
+      "esm": true,
+      "experimentalSpecifierResolution": "node",
+  },
   "references": [
     {
       "path": "./tsconfig.node.json"
@@ -7,5 +16,10 @@
     {
       "path": "./tsconfig.app.json"
     }
-  ]
+  ],
+  "globals": {
+    "ts-jest": {
+      "babelConfig": true
+    }
+  }
 }
