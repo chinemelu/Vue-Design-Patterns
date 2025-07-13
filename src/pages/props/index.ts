@@ -1,3 +1,5 @@
-import Prop  from './Prop.vue'
+import Props from './Prop.vue'
 
-export { Prop }
+import validateVariant from './lib/util/validateVariant.ts'
+
+export { Props, validateVariant }

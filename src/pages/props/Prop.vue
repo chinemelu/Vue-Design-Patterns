@@ -1,10 +1,9 @@
 <template>
-    <div :class="variant">
-        <h1>BPPM!</h1>
-    </div>
+    <div :class="variant">Message</div>
 </template>
 
 <script setup lang="ts">
+import validateVariant from './lib/util/validateVariant'
 
     // enum Variant {
     //     success = 'success',
@@ -24,7 +23,8 @@
     defineProps({
         variant: {
             type: String,
-            validator: (value: string) => ['success', 'warning', 'error'].includes(value) 
+            validator: validateVariant,
+            default: 'success'
         }
     })
 

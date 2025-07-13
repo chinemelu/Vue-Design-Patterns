@@ -1,14 +1,19 @@
 {
   "files": [],
-  "module": "esnext",
   "compilerOptions": {
+    "module": "NodeNext",
+    "target": "esnext",
     "esModuleInterop": true,
-    "types": ["node", "jest"],
+    "isolatedModules": false,
+    "moduleResolution": "nodenext",
+    "noEmit": true,
+    "allowImportingTsExtensions": true
   },
   "ts-node": {
       "esm": true,
       "experimentalSpecifierResolution": "node",
   },
+  "exclude": ["__tests__/**/*.ts"],
   "references": [
     {
       "path": "./tsconfig.node.json"
