@@ -2,6 +2,12 @@
     <div :class="variant">Message</div>
 </template>
 
+<script lang="ts">
+  export default {
+    name: 'MessageVariantProp',
+  }
+</script>
+
 <script setup lang="ts">
 import validateVariant from './lib/util/validateVariant'
 
