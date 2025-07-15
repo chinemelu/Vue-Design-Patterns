@@ -9,7 +9,7 @@
 </script>
 
 <script setup lang="ts">
-import validateVariant from './lib/util/validateVariant'
+import validateVariant from '../lib/util/validateVariant'
 
     // enum Variant {
     //     success = 'success',

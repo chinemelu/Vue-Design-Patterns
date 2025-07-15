@@ -1,4 +1,4 @@
-import Props from './Prop.vue'
+import Props from './ui/Message.vue'
 
 import validateVariant from './lib/util/validateVariant.ts'
 
