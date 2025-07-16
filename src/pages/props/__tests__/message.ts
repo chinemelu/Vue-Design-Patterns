@@ -1,15 +1,15 @@
 import { shallowMount } from '@vue/test-utils'
-import { Props } from '../index.ts'
+import { Message } from '../index.ts'
 import validateVariant from '../lib/util/validateVariant.ts'
 
-describe('Props Component', () => {
+describe('Message Component', () => {
   it('renders a text', () => {
-    const wrapper = shallowMount(Props)
+    const wrapper = shallowMount(Message)
     expect(wrapper.html()).toContain('<div')
     expect(wrapper.text()).toContain('Message')
   })
   it(`renders a class given a 'variant' prop`, () => {
-    const wrapper = shallowMount(Props, {
+    const wrapper = shallowMount(Message, {
       props: {
         variant: 'success',
       },
@@ -17,7 +17,7 @@ describe('Props Component', () => {
     expect(wrapper.find('.success').exists()).toBe(true)
   })
   it(`validates valid variant prop`, async () => {
-    const wrapper = shallowMount(Props, {
+    const wrapper = shallowMount(Message, {
         props: {
           variant: 'success'
         }

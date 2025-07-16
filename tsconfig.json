@@ -5,7 +5,7 @@
     "target": "esnext",
     "esModuleInterop": true,
     "isolatedModules": false,
-    "moduleResolution": "nodenext",
+    "moduleResolution": "NodeNext",
     "noEmit": true,
     "allowImportingTsExtensions": true
   },

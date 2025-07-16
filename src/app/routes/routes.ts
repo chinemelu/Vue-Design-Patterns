@@ -5,11 +5,19 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'props',
+      name: 'message',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../../pages/props/ui/Message.vue'),
+    },
+    {
+      path: '/navbar',
+      name: 'navbar',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../../pages/props/ui/Navbar.vue'),
     },
   ],
 })
