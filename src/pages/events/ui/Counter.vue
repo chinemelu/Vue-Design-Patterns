@@ -4,16 +4,19 @@
 </template>
 
 <script lang="ts">
+    import { submitValidator } from '../lib/submitValidator'
+
     export default {
         name: "AppCounter",
         // emits: ['submit'],
         emits: {
-            submit: (count: number) => {
-                // another way of declaring emits
-                // if the validation fails, there will be no emission
-                // If the validator returns false, the event will not be emitted.
-                return typeof count !== 'string' && !isNaN(count)
-            }
+            // submit: (count: number) => {
+            //     // another way of declaring emits
+            //     // if the validation fails, there will be no emission
+            //     // If the validator returns false, the event will not be emitted.
+            //     return typeof count !== 'string' && !isNaN(count)
+            // }
+            submit: submitValidator
         },
         data() {
             return {
