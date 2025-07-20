@@ -3,7 +3,7 @@
     <button role="submit" @click="submit" />
 </template>
 
-<script lang="ts">
+<!-- <script lang="ts">
     import { submitValidator } from '../lib/submitValidator'
 
     export default {
@@ -29,6 +29,29 @@
             },
             submit() {
                 this.$emit('submit' , this.count)
+            }
+        }
+    }
+</script> -->
+
+<script lang="ts">
+    import { ref } from 'vue'
+    export default {
+        name: 'AppCounter',
+        setup(props, { emit }) {
+            const count = ref(0);
+
+            function increment() {
+                count.value += 1
+            }
+
+            function submit() {
+                emit('submit', count.value)
+            }
+
+            return {
+                increment,
+                submit
             }
         }
     }
