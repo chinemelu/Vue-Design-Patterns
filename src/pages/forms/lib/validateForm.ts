@@ -17,15 +17,13 @@ const isValidLength = (fieldValue: number, unit: keyof Limits, cb?: () => string
     const lengthObject = limits[unit]
     const max = lengthObject.max
     const min = lengthObject.min
-    if (lengthObject) {
-        return {
-            valid: fieldValue >= min && fieldValue <= max,
-            ...(cb && { message: cb()} )
-        }
+    return {
+        valid: fieldValue >= min && fieldValue <= max,
+        ...(cb && { message: cb()} )
     }
 }
 
 export default {
-    length: isValidLength,
-    required: isRequired
+    isValidLength,
+    isRequired
 }

@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-    import type { ValidationResult } from '../index';
+    // import type { ValidationResult } from '../index';
  
 </script>
 
