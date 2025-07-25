@@ -1,27 +1,22 @@
 {
-  "files": [],
   "compilerOptions": {
     "module": "NodeNext",
     "target": "esnext",
     "esModuleInterop": true,
-    "isolatedModules": false,
     "moduleResolution": "NodeNext",
     "noEmit": true,
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+      // Ensure that .d.ts files are created by tsc, but not .js files
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    // Ensure that Babel can safely transpile files in the TypeScript project
+    "isolatedModules": true
   },
   "ts-node": {
       "esm": true,
       "experimentalSpecifierResolution": "node",
   },
   "exclude": ["__tests__/**/*.ts"],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
-    }
-  ],
   "globals": {
     "ts-jest": {
       "babelConfig": true
