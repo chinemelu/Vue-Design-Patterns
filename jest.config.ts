@@ -4,6 +4,9 @@ const config: Config.InitialOptions = {
   preset: 'ts-jest',
   moduleFileExtensions: ['vue', 'js', 'ts', 'json'],
   testEnvironment: "jsdom",
+  testEnvironmentOptions: {
+    customExportConditions: ["node", "node-addons"]
+  },
   transform: {
     "^.+\\.[t|j]sx?$": "babel-jest",
     "^[^.]+.vue$": "@vue/vue3-jest",

@@ -1,4 +1,4 @@
-import { patientFormValidation } from '../index.js'
+import { patientFormValidation } from '../index.ts'
 
 describe('required', () => {
     it('is invalid when undefined', () => {
