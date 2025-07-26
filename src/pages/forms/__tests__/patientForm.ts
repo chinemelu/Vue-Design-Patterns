@@ -84,7 +84,7 @@ describe('length', () => {
             valid: true,
             message: "Valid weight in kg"
         })
-        expect(patientFormValidation.isValidLength(500, 'lb', () => "Valid weight in lb")).toEqual({
+        expect(patientFormValidation.isValidLength(300, 'lb', () => "Valid weight in lb")).toEqual({
             valid: true,
             message: "Valid weight in lb"             
         })

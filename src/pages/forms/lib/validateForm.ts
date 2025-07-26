@@ -1,5 +1,5 @@
-import type { ValidationResult } from "../index"
-import type { Limits } from "../index"
+import type { ValidationResult } from "../index.js"
+import type { Limits } from "../index.js"
 
 const limits: Limits = {
     kg: { min: 30, max: 200 },
