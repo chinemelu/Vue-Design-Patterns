@@ -1,5 +1,5 @@
 import { patientFormValidation } from '../index.ts'
-import { LB, KG } from "../constants.ts"
+import { LB, KG } from "../index.ts"
 
 
 describe('required', () => {
