@@ -1,11 +1,6 @@
 import type { ValidationResult } from "../index.js"
 import type { Limits } from "../index.js"
 
-const limits: Limits = {
-    kg: { min: 30, max: 200 },
-    lb: { min: 66, max: 440 },
-}
-
 const isRequired = (fieldValue: unknown, cb?: () => string): ValidationResult => {
     return {
         valid: !!fieldValue,
@@ -13,7 +8,7 @@ const isRequired = (fieldValue: unknown, cb?: () => string): ValidationResult =>
     }
 }
 
-const isValidLength = (fieldValue: number, unit: keyof Limits, cb?: () => string): ValidationResult => {
+const isValidLength = (fieldValue: number, unit: keyof Limits, limits: Limits, cb?: () => string): ValidationResult => {
     const lengthObject = limits[unit]
     const max = lengthObject.max
     const min = lengthObject.min
@@ -23,7 +18,14 @@ const isValidLength = (fieldValue: number, unit: keyof Limits, cb?: () => string
     }
 }
 
+const isValidMeasurement = (value: number, unit: keyof Limits, limits: Limits): ValidationResult => {
+    // check if it is exists
+    // if it exists, check if it is a valid length
+
+}
+
 export default {
     isValidLength,
-    isRequired
+    isRequired,
+    isValidMeasurement
 }
