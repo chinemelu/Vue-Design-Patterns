@@ -18,8 +18,7 @@ describe('required', () => {
     })
     it('returns a valid of true when input is valid', () => {
          expect(patientFormValidation.isRequired('Chinemelu Nwosu', () => 'Field is required')).toEqual({
-            valid: true,
-            message: 'Field is required'
+            valid: true
         })
     })
 })
@@ -92,7 +91,7 @@ describe('length', () => {
             kg: { min: 30, max: 200 },
             lb: { min: 66, max: 440 },
         }
-        const actual = patientFormValidation.isValidLength(30, KG, limits, () => "Valid weight in lb")
+        const actual = patientFormValidation.isValidLength(30, KG, limits, () => "Valid weight in kg")
         expect(actual).toEqual({
             valid: true,
             message: "Valid weight in kg"
@@ -106,8 +105,8 @@ describe('measurement', () => {
             kg: { min: 10, max: 50 },
             lb: { min: 150, max: 200 },
         }
-        const actualKg = patientFormValidation.isValidMeasurement(undefined, KG, limits)
-        const actualLb = patientFormValidation.isValidMeasurement(undefined, LB, limits)
+        const actualKg = patientFormValidation.isValidMeasurement(undefined, KG, limits, () => 'Measurement does not exist')
+        const actualLb = patientFormValidation.isValidMeasurement(undefined, LB, limits, () => 'Measurement does not exist')
 
         expect(actualKg).toEqual({
             valid: false,
@@ -129,12 +128,10 @@ describe('measurement', () => {
         const actualLb = patientFormValidation.isValidMeasurement(145, LB, limits)
 
         expect(actualKg).toEqual({
-            valid: false,
-            message: 'Invalid measurement in kg'
+            valid: false
         })
         expect(actualLb).toEqual({
-            valid: false,
-            message: 'Invalid measurement in lb'
+            valid: false
         })
     })
 
@@ -144,16 +141,14 @@ describe('measurement', () => {
             lb: { min: 500, max: 2000 },
         }
 
-        const actualKg = patientFormValidation.isValidMeasurement(30, KG, limits)
-        const actualLb = patientFormValidation.isValidMeasurement(200, LB, limits)  
+        const actualKg = patientFormValidation.isValidMeasurement(50, KG, limits)
+        const actualLb = patientFormValidation.isValidMeasurement(1000, LB, limits)  
 
         expect(actualKg).toEqual({
-            valid: true,
-            message: 'Valid measurement in kg'
+            valid: true
         })
         expect(actualLb).toEqual({
-            valid: true,
-            message: 'Valid measurement in kg'
+            valid: true
         })
     })
 })
