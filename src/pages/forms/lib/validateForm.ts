@@ -31,8 +31,19 @@ const isValidMeasurement = (value: number, unit: keyof Limits, limits: Limits, c
     return isMeasurementRequiredObject
 }
 
+const isFormValid = () => {
+    return true
+}
+
+const validateForm = () => {
+    return true
+}
+
+
 export default {
     isValidLength,
     isRequired,
-    isValidMeasurement
+    isValidMeasurement,
+    isFormValid,
+    validateForm
 }

@@ -4,3 +4,5 @@ export { LB, KG } from './constants.ts'
 
 import patientFormValidation from './lib/validateForm.ts'
 export { patientFormValidation }
+
+export type { PatientFormState } from './ui/PatientFormState.ts'
