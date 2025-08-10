@@ -151,4 +151,25 @@ describe('measurement', () => {
             valid: true
         })
     })
+    describe('isFormValid', () => {
+        it('returns true when mass and weight field are valid', () => {
+            const form = {
+                name: { valid: true },
+                weight: {
+                    valid: true
+                }
+            }
+            expect(patientFormValidation.isFormValid(form)).toEqual({
+                name: tur
+            })
+        })
+        it('returns false when any field is invalid', () => {
+            const form = {
+                name: { valid: true },
+                weight: {
+                    valid: true
+                }
+            }
+        })
+    })
 })
