@@ -1,4 +1,4 @@
-import { patientFormValidation } from '../index.ts'
+import { PatientFormValidation, patientFormValidation } from '../index.ts'
 import { LB, KG } from "../index.ts"
 
 
@@ -153,23 +153,22 @@ describe('measurement', () => {
     })
     describe('isFormValid', () => {
         it('returns true when mass and weight field are valid', () => {
-            const form = {
+            const form: PatientFormValidation = {
                 name: { valid: true },
                 weight: {
                     valid: true
                 }
             }
-            expect(patientFormValidation.isFormValid(form)).toEqual({
-                name: tur
-            })
+            expect(patientFormValidation.isFormValid(form)).toBe(true)
         })
         it('returns false when any field is invalid', () => {
-            const form = {
+            const form: PatientFormValidation = {
                 name: { valid: true },
                 weight: {
-                    valid: true
+                    valid: false
                 }
             }
+            expect(patientFormValidation.isFormValid(form)).toBe(false)
         })
     })
 })

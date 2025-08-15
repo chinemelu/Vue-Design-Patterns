@@ -1,4 +1,4 @@
-import type { ValidationResult } from "../index.js"
+import type { PatientFormValidation, ValidationResult } from "../index.js"
 import type { Limits } from "../index.js"
 
 const isRequired = (fieldValue: unknown, cb?: () => string): ValidationResult => {
@@ -31,8 +31,8 @@ const isValidMeasurement = (value: number, unit: keyof Limits, limits: Limits, c
     return isMeasurementRequiredObject
 }
 
-const isFormValid = () => {
-    return true
+const isFormValid = (form: PatientFormValidation) => {
+    return form.name.valid && form.weight.valid
 }
 
 const validateForm = () => {

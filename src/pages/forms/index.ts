@@ -6,3 +6,4 @@ import patientFormValidation from './lib/validateForm.ts'
 export { patientFormValidation }
 
 export type { PatientFormState } from './ui/PatientFormState.ts'
+export type { PatientFormValidation } from './ui/PatientFormValidation.ts'
