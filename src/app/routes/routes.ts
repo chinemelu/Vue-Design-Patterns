@@ -27,6 +27,14 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../../pages/events/ui/Counter.vue'),
     },
+    {
+      path: '/form',
+      name: 'form',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../../pages/forms/ui/Patient.vue'),
+    },
   ],
 })
 
