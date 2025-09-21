@@ -38,19 +38,13 @@ Form State
 
 <script lang="ts">
 import { reactive, computed } from 'vue'
-import { PatientFormState, isFormValid, LB, KG } from '../index.ts'
+import { isFormValid, KG, Limits, patientForm } from '../index.ts'
+import type { PatientFormState } from '../index.ts'
 export default {
   name: 'AppPatient',
 
   setup() {
-    const patientForm: PatientFormState = {
-      name: 'John',
-      weight: {
-        value: 445,
-        units: LB,
-      },
-    }
-    const form = reactive({
+    const form: PatientFormState = reactive({
       name: '',
       weight: {
         value: 0,
@@ -58,10 +52,20 @@ export default {
       },
     })
 
-    // const validState = validateForm(patientForm)
+    const limits: Limits = {
+      kg: {
+        min: 30,
+        max: 200,
+      },
+      lb: {
+        min: 66,
+        max: 440,
+      },
+    }
 
-    const validatedForm = computed(() => form)
-    const valid = computed(() => isFormValid(validatedForm))
+    const validatedForm = computed(() => patientForm(form, limits))
+    const valid = computed(() => isFormValid(validatedForm.value))
+
     return {
       form,
       validatedForm,

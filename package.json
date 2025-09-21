@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
